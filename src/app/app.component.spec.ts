@@ -1,18 +1,14 @@
-import {async, TestBed} from '@angular/core/testing';
-import {Component} from '@angular/core';
-import {AppComponent} from './app.component';
+import { async, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { AppComponent } from './app.component';
 
-@Component({selector: 'app-employee-list', template: ''})
-class EmployeeListComponent {
-}
+@Component({ selector: 'app-employee-list', template: '' })
+class EmployeeListComponent {}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        EmployeeListComponent
-      ],
+      declarations: [AppComponent, EmployeeListComponent],
     }).compileComponents();
   }));
 
