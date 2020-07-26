@@ -1,32 +1,31 @@
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {from, Observable, throwError} from 'rxjs';
-import {catchError, flatMap} from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { from, Observable, throwError } from 'rxjs';
+import { catchError, flatMap } from 'rxjs/operators';
 
-import {Employee} from './employee';
+import { Employee } from './employee';
 
 @Injectable()
 export class EmployeeService {
   private url = '/api/employees';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Employee> {
-    return this.http.get<Employee[]>(this.url)
-      .pipe(
-        flatMap(emps => from(emps)),
-        catchError(this.handleError)
-      );
+    return this.http.get<Employee[]>(this.url).pipe(
+      flatMap((emps) => from(emps)),
+      catchError(this.handleError)
+    );
   }
 
   get(id: number): Observable<Employee> {
-    return this.http.get<Employee>(`${this.url}/${id}`)
+    return this.http
+      .get<Employee>(`${this.url}/${id}`)
       .pipe(catchError(this.handleError));
   }
 
   save(emp: Employee): Observable<Employee> {
-    const response = (!!emp.id) ? this.put(emp) : this.post(emp);
+    const response = !!emp.id ? this.put(emp) : this.post(emp);
     return response.pipe(catchError(this.handleError));
   }
 
