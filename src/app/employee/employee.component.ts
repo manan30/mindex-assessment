@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -11,4 +9,12 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeComponent {
   @Input() employee: Employee;
   @Input() directReports: Employee[];
+
+  @Output() editEmployeeRecord = new EventEmitter();
+  @Output() deleteEmployeeRecord = new EventEmitter();
+
+  public delete(emp: Employee) {
+    console.log(emp, this.employee);
+    // this.deleteEmployeeRecord.emit({});
+  }
 }

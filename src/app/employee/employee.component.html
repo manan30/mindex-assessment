@@ -24,12 +24,14 @@
               aria-hidden="false"
               aria-label="edit icon"
               matTooltip="Edit employee record"
+              (click)="this.editEmployeeRecord.emit(emp)"
               >edit</mat-icon
             >
             <mat-icon
               aria-hidden="false"
               aria-label="delete icon"
               matTooltip="Delete employee record"
+              (click)="delete(emp)"
               >delete</mat-icon
             >
           </div>
