@@ -15,13 +15,23 @@
     <div class="direct-reports-list">
       <div *ngIf="directReports?.length > 0; else elseBlock">
         <div class="direct-reports-list-item" *ngFor="let emp of directReports">
-          <div>
+          <div style="font-weight: bold;">
             {{ emp.firstName }} {{ emp.lastName }},
             {{ emp.position }}
           </div>
           <div class="button-container">
-            <button>Edit</button>
-            <button>Delete</button>
+            <mat-icon
+              aria-hidden="false"
+              aria-label="edit icon"
+              matTooltip="Edit employee record"
+              >edit</mat-icon
+            >
+            <mat-icon
+              aria-hidden="false"
+              aria-label="delete icon"
+              matTooltip="Delete employee record"
+              >delete</mat-icon
+            >
           </div>
         </div>
       </div>

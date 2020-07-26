@@ -48,7 +48,13 @@ mat-divider {
 .direct-reports-list .direct-reports-list-item {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.direct-reports-list-item:nth-child(odd) {
+  opacity: 0.8;
 }
 
 .direct-reports-list-item:last-child {
@@ -57,4 +63,12 @@ mat-divider {
 
 .direct-reports-list-item .button-container {
   margin-left: auto;
+}
+
+.button-container .mat-icon {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+
+  color: #fbf7f4;
+  cursor: pointer;
 }
