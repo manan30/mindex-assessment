@@ -23,7 +23,6 @@ h1 {
 }
 
 mat-dialog-container#modal-component {
-  border: 3px solid #262626;
-  border-radius: 11px;
-  background-color: #1a1a1a;
+  border-radius: 1rem;
+  background-color: #eef1ef;
 }

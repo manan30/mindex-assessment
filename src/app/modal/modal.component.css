@@ -1,0 +1,20 @@
+.mat-row,
+.mat-header-row {
+  min-width: 20rem !important;
+  width: 100%;
+}
+
+form > * {
+  width: 100% !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: inherit;
+}
+
+mat-form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+}

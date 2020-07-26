@@ -1,1 +1,65 @@
-<p>modal works!</p>
+<form ng-cloak name="form" [formGroup]="form">
+  <div class="mat-header-row" role="row">
+    <h1 class="mat-h1">
+      Employee: {{ data.employee.firstName + ' ' + data.employee.lastName }}
+    </h1>
+  </div>
+  <div mat-dialog-content class="container">
+    <mat-form-field>
+      <label for="username">First Name</label>
+      <input
+        matInput
+        id="firstName"
+        name="firstName"
+        formControlName="firstName"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <label for="username">Last name</label>
+      <input matInput id="lastName" formControlName="lastName" />
+    </mat-form-field>
+    <mat-form-field>
+      <label for="username">Title</label>
+      <input
+        matInput
+        id="position"
+        name="position"
+        formControlName="position"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <label for="username">Compensation</label>
+      <input
+        matInput
+        id="compensation"
+        name="compensation"
+        formControlName="compensation"
+      />
+      <mat-error
+        *ngIf="
+          form.controls['compensation'].errors?.required &&
+          form.controls['compensation'].touched
+        "
+        >Compensation is requred</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      class="mat-primary mat-raised-button"
+      (click)="save()"
+      [disabled]="!form.valid"
+    >
+      Save
+    </button>
+    <button
+      mat-button
+      class="mat-primary mat-raised-button"
+      (click)="cancel()"
+      aria-label="Cancel"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

@@ -47,23 +47,19 @@ export class EmployeeListComponent implements OnInit {
     return null;
   }
 
-  openModal() {
+  openModal(data) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.id = 'modal-component';
     dialogConfig.width = '50%';
+    dialogConfig.data = data;
 
     const modalDialogRef = this.dialog.open(ModalComponent, dialogConfig);
     return modalDialogRef;
   }
 
   private onEditEmployeeRecord(employee: Employee) {
-    // const dialogRef = this.dialog.open(ModalComponent, {
-    //   width: '50%',
-    //   data: { employee: employee }, // data holds the information we are giving to the dialog component
-    //   disableClose: true, // disables closing bfrom clicking outside the dialog
-    // });
-    const dialogRef = this.openModal();
+    const dialogRef = this.openModal({ employee: employee });
     dialogRef.afterClosed().subscribe((data) => {
       this.getAllEmployees();
     });
