@@ -12,6 +12,18 @@
   <mat-divider></mat-divider>
   <mat-card-content>
     <div>Direct Reports</div>
-    <div class="direct-reports-list">abcd</div>
+    <div class="direct-reports-list">
+      <div *ngIf="employee.detailsReport?.length > 0; else elseBlock">
+        <div class="direct-reports-list-item">
+          <div>{{ emp.firstName }}</div>
+          <div class="button-container">
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+      <ng-template #elseBlock>This employee has no reports</ng-template>
+    </div>
+    <!-- </div> -->
   </mat-card-content>
 </mat-card>
