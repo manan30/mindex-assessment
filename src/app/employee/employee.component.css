@@ -13,9 +13,34 @@
 }
 
 .mat-card-title {
-  color: #13262f;
+  color: #1a659e;
 }
 
 .mat-card-subtitle {
   margin-top: 1rem !important;
+}
+
+mat-divider {
+  display: block;
+  height: 1px;
+  background: #9db4c0;
+}
+
+.mat-card-content {
+  display: block;
+
+  margin: 1rem;
+  padding: 0.5rem;
+  width: calc(100% - 3rem);
+
+  color: #e8eef2;
+}
+
+.mat-card-content > div {
+  background-color: #829cbc;
+  padding: 0.8rem;
+}
+
+.mat-card-content .direct-reports-list {
+  background-color: #82a6b1;
 }
