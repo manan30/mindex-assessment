@@ -59,10 +59,19 @@ export class EmployeeListComponent implements OnInit {
   }
 
   private onEditEmployeeRecord(employee: Employee) {
-    const dialogRef = this.openModal({ employee: employee });
+    const dialogRef = this.openModal({ action: 'update', employee: employee });
     dialogRef.afterClosed().subscribe((data) => {
       this.getAllEmployees();
     });
+  }
+
+  private onDeleteEmployeeRecord(object: {
+    record: Employee;
+    employee: Employee;
+  }) {
+    const warning = `Are you sure you want to delete the employee record for ${object.record.firstName} ${object.record.lastName}?`;
+
+    const dialogRef = this.openModal({ action: 'delete', warning: warning });
   }
 
   private handleError(e: Error | any): string {

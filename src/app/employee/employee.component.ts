@@ -12,9 +12,4 @@ export class EmployeeComponent {
 
   @Output() editEmployeeRecord = new EventEmitter();
   @Output() deleteEmployeeRecord = new EventEmitter();
-
-  public delete(emp: Employee) {
-    console.log(emp, this.employee);
-    // this.deleteEmployeeRecord.emit({});
-  }
 }

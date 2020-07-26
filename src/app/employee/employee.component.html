@@ -31,7 +31,12 @@
               aria-hidden="false"
               aria-label="delete icon"
               matTooltip="Delete employee record"
-              (click)="delete(emp)"
+              (click)="
+                this.deleteEmployeeRecord.emit({
+                  record: emp,
+                  employee: employee
+                })
+              "
               >delete</mat-icon
             >
           </div>
