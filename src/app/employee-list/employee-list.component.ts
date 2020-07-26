@@ -60,7 +60,7 @@ export class EmployeeListComponent implements OnInit {
 
   private onEditEmployeeRecord(employee: Employee) {
     const dialogRef = this.openModal({ action: 'update', employee: employee });
-    dialogRef.afterClosed().subscribe((data) => {
+    dialogRef.afterClosed().subscribe(() => {
       this.getAllEmployees();
     });
   }
@@ -72,10 +72,29 @@ export class EmployeeListComponent implements OnInit {
     const warning = `Are you sure you want to delete the employee record for ${object.record.firstName} ${object.record.lastName}?`;
 
     const dialogRef = this.openModal({ action: 'delete', warning: warning });
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data !== 'cancel') {
+        const idx: number = object.employee.directReports.indexOf(
+          object.record.id
+        );
+        if (idx !== -1) {
+          object.employee.directReports.splice(idx, 1);
+        }
+        this.employeeService
+          .save(object.employee)
+          .pipe(catchError(this.handleDeleteError.bind(this)))
+          .subscribe();
+      }
+    });
   }
 
   private handleError(e: Error | any): string {
     console.error(e);
     return (this.errorMessage = e.message || 'Unable to retrieve employees');
+  }
+
+  private handleDeleteError(e: Error | any): string {
+    console.error(e);
+    return (this.errorMessage = e.message || 'Unable to delete employee');
   }
 }

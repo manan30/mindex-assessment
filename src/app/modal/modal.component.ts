@@ -17,8 +17,6 @@ import { Employee } from 'src/app/employee';
 })
 export class ModalComponent implements OnInit {
   public form: FormGroup;
-  status;
-  warningMessage;
   sendingEmail = false;
   errorMessage: string;
   employee: Employee = new Employee();
@@ -54,7 +52,7 @@ export class ModalComponent implements OnInit {
   }
 
   cancelAction() {
-    this.dialogRef.close();
+    this.dialogRef.close('cancel');
   }
 
   saveAction() {
@@ -67,13 +65,13 @@ export class ModalComponent implements OnInit {
       this.employee.compensation = this.form.controls['compensation'].value;
       this.employeeService
         .save(this.employee)
-        .pipe(catchError(this.handleDeleteError.bind(this)))
+        .pipe(catchError(this.handleUpdateError.bind(this)))
         .subscribe();
     }
     this.dialogRef.close();
   }
 
-  private handleDeleteError(e: Error | any): string {
+  private handleUpdateError(e: Error | any): string {
     console.error(e);
     return (this.errorMessage = e.message || 'Unable to delete employee');
   }
