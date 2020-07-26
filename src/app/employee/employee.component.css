@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.mat-card {
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 1rem #e8eef2;
+}
+
+.mat-card:hover {
+  box-shadow: 0 0 3rem #c7d3dd;
+}
+
+.mat-card-title {
+  color: #13262f;
+}
+
+.mat-card-subtitle {
+  margin-top: 1rem !important;
+}

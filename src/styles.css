@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  height: 100vh;
+  height: calc(100vh - 2.5rem);
   margin: 0;
 
   background-color: #eef1ef;
@@ -16,4 +16,8 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
   box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 0;
 }
