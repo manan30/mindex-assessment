@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
 })
-export default class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

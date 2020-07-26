@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -16,7 +17,7 @@ import { BackendlessMockService } from './backendless-mock.service';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeService } from './employee.service';
 import { EmployeeComponent } from './employee/employee.component';
-import ModalComponent from './modal/modal.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import ModalComponent from './modal/modal.component';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+    MatDialogModule,
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent],

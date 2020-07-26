@@ -3,6 +3,8 @@
     <app-employee
       [employee]="emp"
       [directReports]="directReports(emp)"
+      (editEmployeeRecord)="onEditEmployeeRecord($event)"
+      (deleteEmployeeRecord)="onDeleteEmployeeRecord($event)"
     ></app-employee>
   </mat-list-item>
 </mat-list>
