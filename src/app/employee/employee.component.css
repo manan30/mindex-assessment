@@ -47,6 +47,12 @@ mat-divider {
 
 .direct-reports-list .direct-reports-list-item {
   display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.direct-reports-list-item:last-child {
+  margin-bottom: 0 !important;
 }
 
 .direct-reports-list-item .button-container {

@@ -13,9 +13,12 @@
   <mat-card-content>
     <div>Direct Reports</div>
     <div class="direct-reports-list">
-      <div *ngIf="employee.detailsReport?.length > 0; else elseBlock">
-        <div class="direct-reports-list-item">
-          <div>{{ emp.firstName }}</div>
+      <div *ngIf="directReports?.length > 0; else elseBlock">
+        <div class="direct-reports-list-item" *ngFor="let emp of directReports">
+          <div>
+            {{ emp.firstName }} {{ emp.lastName }},
+            {{ emp.position }}
+          </div>
           <div class="button-container">
             <button>Edit</button>
             <button>Delete</button>

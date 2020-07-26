@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -9,6 +10,5 @@ import { Employee } from '../employee';
 })
 export class EmployeeComponent {
   @Input() employee: Employee;
-
-  constructor() {}
+  @Input() directReports: Employee[];
 }

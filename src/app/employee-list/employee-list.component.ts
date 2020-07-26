@@ -26,6 +26,19 @@ export class EmployeeListComponent implements OnInit {
       .subscribe();
   }
 
+  private directReports(employee: Employee) {
+    if (employee?.directReports?.length > 0) {
+      const reports = [];
+      employee.directReports.map((id) => {
+        const e = this.employees.find((x) => x.id === id);
+        reports.push(e);
+      });
+      return reports;
+    }
+
+    return null;
+  }
+
   private handleError(e: Error | any): string {
     console.error(e);
     return (this.errorMessage = e.message || 'Unable to retrieve employees');
