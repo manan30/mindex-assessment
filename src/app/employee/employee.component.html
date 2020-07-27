@@ -11,7 +11,7 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <div>Direct Reports</div>
+    <div class="content-header">Direct Reports</div>
     <div class="direct-reports-list">
       <div *ngIf="directReports?.length > 0; else elseBlock">
         <div class="direct-reports-list-item" *ngFor="let emp of directReports">
@@ -42,7 +42,11 @@
           </div>
         </div>
       </div>
-      <ng-template #elseBlock>This employee has no reports</ng-template>
+      <ng-template #elseBlock
+        ><div class="content-header" style="background-color: #8a9ea8;">
+          This employee has no reports
+        </div></ng-template
+      >
     </div>
     <!-- </div> -->
   </mat-card-content>
