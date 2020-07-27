@@ -18,3 +18,16 @@ mat-form-field label {
   display: block;
   margin-bottom: 0.5rem;
 }
+
+::ng-deep.mat-form-field-ripple {
+  background-color: #1a659e !important;
+}
+
+::ng-deep.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #f44336 !important;
+}
+
+.primary {
+  background-color: #1a659e;
+  color: #e8eef2;
+}
