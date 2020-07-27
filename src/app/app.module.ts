@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
@@ -40,7 +40,7 @@ import { ModalComponent } from './modal/modal.component';
       put204: false,
     }),
     MatCardModule,
-    MatListModule,
+    MatGridListModule,
     MatInputModule,
     MatMenuModule,
     MatIconModule,
